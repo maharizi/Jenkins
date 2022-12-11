@@ -2,15 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('git clone') {
+        stage('git clone & build') {
             steps {
-                sleep(10)
-                echo 'git clone'
-            }
-        }
-        stage('build') {
-            steps {
-                echo 'build'
+                parallel(
+                    a: {
+                        echo "This is branch a"
+                    },
+                    b: {
+                        echo "This is branch b"
+                    }
+                )
             }
         }
         stage('test') {
@@ -25,4 +26,3 @@ pipeline {
         }
     }
 }
-
