@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('git clone & build') {
+        stage('git clone & build * king maor') {
             steps {
                 parallel(
                     a: {
