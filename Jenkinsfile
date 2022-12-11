@@ -2,34 +2,27 @@ pipeline {
     agent any
 
     stages {
-
-        stage('cleanWS') {
+        stage('git clone') {
             steps {
-                cleanWs()
-            }
-        }
-
-        stage('clone git') {
-            steps {
-                git 'https://github.com/maharizi/Jenkins'
+                sleep(10)
+                echo 'git clone'
             }
         }
         stage('build') {
             steps {
-                nodejs('Node8') {
-                    sh "npm install"
-                }
+                echo 'build'
             }
         }
         stage('test') {
             steps {
-                nodejs('Node8') {
-                    sh "npm run test"
-                }
-    
+                echo 'test'
             }
-
         }
-
+        stage('deploy') {
+            steps {
+                echo 'deploy'
+            }
+        }
     }
 }
+
