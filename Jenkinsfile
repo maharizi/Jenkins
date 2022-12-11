@@ -11,7 +11,7 @@ pipeline {
 
         stage('clone git') {
             steps {
-                git 'https://github.com/Elad0109/simple-webapp-nodejs.git'
+                git 'https://github.com/maharizi/Jenkins'
             }
         }
         stage('build') {
